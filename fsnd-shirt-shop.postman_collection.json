@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "4dbd35d7-fb62-4957-8414-1ddaacc69641",
+		"name": "fsnd-shirt-shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "post/shirt",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4Njc1NjE1LCJleHAiOjE2Njg3NjIwMTUsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCBwb3N0OmN1c3RvbWVyIHBhdGNoOmN1c3RvbWVyIGRlbGV0ZTpjdXN0b21lciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCIsInBvc3Q6Y3VzdG9tZXIiLCJwYXRjaDpjdXN0b21lciIsImRlbGV0ZTpjdXN0b21lciJdfQ.YmNqsdM7C_dz88IOgHWxL4LPPUUIauI4i5qUf-VEjZ-PQMzHTbVbg4V5HwaV55uiA-8uv2tQMROceEbUV-xHgUaUWy5ulLyePLos7IWtOCw7kzVBGlu1kEkqy7a2UZczhSQgtUXyNKaSd6-hev771nEFy50naiEVvoVImiVHGBaZqMyQaFMPZ7iKbe42HWIXvphlpscjAxgy2ps8AKD5vKI-gJy8Fe0M4Mxv-UgUjK64CX6ehPXeCJlnq7nZJj3bvLLUI5k25AiinYGlaqh0_ymbglJg7Xu5TgcF90r2orYFyVyb1qRxzPmxRglhpj_l7hLkjNPgdZyxhE4BJqPeUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"hellow\",\r\n    \"color\": \"red\",\r\n    \"size\": \"S\",\r\n    \"link\": \"http://helloworld\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shirt",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shirt"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "tram",
+							"disabled": true
+						},
+						{
+							"key": "color",
+							"value": "yellow",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "L",
+							"disabled": true
+						},
+						{
+							"key": "link",
+							"value": "http:bjhgjsfs",
+							"disabled": true
+						},
+						{
+							"key": "customer",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "eafTH3uPbXx9qbqgI7pfVCLV7r5XTQzk",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "z5jwoNtpAgBhGw16zee_BHC1fktTiXTOAOEPKpdeS_GhRnc-JckfIBuxoVoX0LGC",
+							"type": "text"
+						},
+						{
+							"key": "audience",
+							"value": "http://localhost:5000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://dev-5euegq86qhglqrz7.us.auth0.com/oauth/token",
+					"protocol": "https",
+					"host": [
+						"dev-5euegq86qhglqrz7",
+						"us",
+						"auth0",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/shirts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/shirts",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shirts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch/shirt/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4NjczMzAwLCJleHAiOjE2Njg3NTk3MDAsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCJdfQ.Qcg1X-KgypSaN3rBSxF-xN62rM-REudTRrHRrs6z8U6CDpdrR-eAkCWpOG0pLKkTp-RMu-3Anw-89eGKBHOllteVRKyBxLRXhTb1SRfMEgzUxenKj0wKBBbRNDDeZpjLv5BHz4ft9KemuyvuhILC1Qdjq0CnvUmQ351rU6v8x6009s2KZlJY8ODQD8EaExK3LaUQ_-jppPLA3RO0-Q_S0zq9S9DTYgsk7vnOOrGN3z7tgu0lrU611I4htVoGPH0-zd8fRuARMXN5yfwTKKFRwI15ToM1q_KHbhMbJLumJXY05uY0WCXvzapFa1XYOslUsEu0XPIiVZFdr5zRUf_NLg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"1111\",\r\n    \"color\": \"2222\",\r\n    \"size\": \"4444S\",\r\n    \"link\": \"http://333333333333333333333333\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/shirt/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shirt",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete/shirt/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4Njc1MjAwLCJleHAiOjE2Njg3NjE2MDAsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCJdfQ.c2hRbZLzRuYL8Svf14MNMROhJPQspOnU0pOtH_4tOF00RokZQ9OIcAZp4tPNWx0Ssr2XXaM0r6CddOPEEmGQNOtc-69UzoWX2aIYIkDsj2dUxRyZCCLaaIf9TR9ssqlbjdoz4jXGz6Wy4igg6_nQeXSL4ecWyonrrwbh64zMDJK9YWSLuasMgSa-T-w5WoaI1KqOLHSndr9biQ4Ye1nUL540bAXex4BlG4OjIkWcIX4jp6nvbtIbGEVyDg8bJf-QL5METLNYBCHc_5u5i0B5YHosXAbrrgHbC9Z396YtSx66f7oYLhZFxCL9sqxR_b3xGdhiNqjvgGZDvHYSwcpIdA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/shirt/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"shirt",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get/customers",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/customers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post/customer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4Njc1NjE1LCJleHAiOjE2Njg3NjIwMTUsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCBwb3N0OmN1c3RvbWVyIHBhdGNoOmN1c3RvbWVyIGRlbGV0ZTpjdXN0b21lciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCIsInBvc3Q6Y3VzdG9tZXIiLCJwYXRjaDpjdXN0b21lciIsImRlbGV0ZTpjdXN0b21lciJdfQ.YmNqsdM7C_dz88IOgHWxL4LPPUUIauI4i5qUf-VEjZ-PQMzHTbVbg4V5HwaV55uiA-8uv2tQMROceEbUV-xHgUaUWy5ulLyePLos7IWtOCw7kzVBGlu1kEkqy7a2UZczhSQgtUXyNKaSd6-hev771nEFy50naiEVvoVImiVHGBaZqMyQaFMPZ7iKbe42HWIXvphlpscjAxgy2ps8AKD5vKI-gJy8Fe0M4Mxv-UgUjK64CX6ehPXeCJlnq7nZJj3bvLLUI5k25AiinYGlaqh0_ymbglJg7Xu5TgcF90r2orYFyVyb1qRxzPmxRglhpj_l7hLkjNPgdZyxhE4BJqPeUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"fgdfgd\",\r\n    \"gender\": \"sfsdf\",\r\n    \"phone\": \"dfgdg444444\",\r\n    \"shirt_id\": 5555555\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch/customer/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4Njc1NjE1LCJleHAiOjE2Njg3NjIwMTUsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCBwb3N0OmN1c3RvbWVyIHBhdGNoOmN1c3RvbWVyIGRlbGV0ZTpjdXN0b21lciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCIsInBvc3Q6Y3VzdG9tZXIiLCJwYXRjaDpjdXN0b21lciIsImRlbGV0ZTpjdXN0b21lciJdfQ.YmNqsdM7C_dz88IOgHWxL4LPPUUIauI4i5qUf-VEjZ-PQMzHTbVbg4V5HwaV55uiA-8uv2tQMROceEbUV-xHgUaUWy5ulLyePLos7IWtOCw7kzVBGlu1kEkqy7a2UZczhSQgtUXyNKaSd6-hev771nEFy50naiEVvoVImiVHGBaZqMyQaFMPZ7iKbe42HWIXvphlpscjAxgy2ps8AKD5vKI-gJy8Fe0M4Mxv-UgUjK64CX6ehPXeCJlnq7nZJj3bvLLUI5k25AiinYGlaqh0_ymbglJg7Xu5TgcF90r2orYFyVyb1qRxzPmxRglhpj_l7hLkjNPgdZyxhE4BJqPeUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"s33333333\",\r\n    \"gender\": \"344522\",\r\n    \"phone\": \"333\",\r\n    \"shirt_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete/customer/id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImNod18yWWVPWFlrN1dPb1duZUF6NyJ9.eyJpc3MiOiJodHRwczovL2Rldi01ZXVlZ3E4NnFoZ2xxcno3LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJlYWZUSDN1UGJYeDlxYnFnSTdwZlZDTFY3cjVYVFF6a0BjbGllbnRzIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNjY4Njc1NjE1LCJleHAiOjE2Njg3NjIwMTUsImF6cCI6ImVhZlRIM3VQYlh4OXFicWdJN3BmVkNMVjdyNVhUUXprIiwic2NvcGUiOiJwb3N0OnNoaXJ0IHBhdGNoOnNoaXJ0IGRlbGV0ZTpzaGlydCBwb3N0OmN1c3RvbWVyIHBhdGNoOmN1c3RvbWVyIGRlbGV0ZTpjdXN0b21lciIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbInBvc3Q6c2hpcnQiLCJwYXRjaDpzaGlydCIsImRlbGV0ZTpzaGlydCIsInBvc3Q6Y3VzdG9tZXIiLCJwYXRjaDpjdXN0b21lciIsImRlbGV0ZTpjdXN0b21lciJdfQ.YmNqsdM7C_dz88IOgHWxL4LPPUUIauI4i5qUf-VEjZ-PQMzHTbVbg4V5HwaV55uiA-8uv2tQMROceEbUV-xHgUaUWy5ulLyePLos7IWtOCw7kzVBGlu1kEkqy7a2UZczhSQgtUXyNKaSd6-hev771nEFy50naiEVvoVImiVHGBaZqMyQaFMPZ7iKbe42HWIXvphlpscjAxgy2ps8AKD5vKI-gJy8Fe0M4Mxv-UgUjK64CX6ehPXeCJlnq7nZJj3bvLLUI5k25AiinYGlaqh0_ymbglJg7Xu5TgcF90r2orYFyVyb1qRxzPmxRglhpj_l7hLkjNPgdZyxhE4BJqPeUQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/customer/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"customer",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
